@@ -65,34 +65,34 @@
 
 
             <div th:each="empleadoFind : ${empleadoFind}">
-            <form th:action="@{/empleado/{id}(id=${empleadoFind.id})}" th:method="put" class="flex-column gap-3 align-items-center" >
+                <form th:action="@{/empleado/{id}(id=${empleadoFind.id})}" th:method="put" class="flex-column gap-3 align-items-center" >
 
 
-                <div class="form-floating  mb-3">
-                    <input th:field="*{empleadoFind.nombre}"  type="text" class="form-control" id="fnombre" placeholder="Nombre Empleado">
-                    <label for="fnombre">Nombre Empleado</label>
-                </div>
-                <div class="form-floating  mb-3">
-                    <input th:field="*{empleadoFind.documentoEmpleado}"  type="number" class="form-control" id="fdocumentoEmpleado" placeholder="Numero de Documento">
-                    <label for="fdocumentoEmpleado">Numero de Documento</label>
-                </div>
+                    <div class="form-floating  mb-3">
+                        <input th:field="*{empleadoFind.nombre}"  type="text" class="form-control" id="fnombre" placeholder="Nombre Empleado">
+                        <label for="fnombre">Nombre Empleado</label>
+                    </div>
+                    <div class="form-floating  mb-3">
+                        <input th:field="*{empleadoFind.documentoEmpleado}"  type="number" class="form-control" id="fdocumentoEmpleado" placeholder="Numero de Documento">
+                        <label for="fdocumentoEmpleado">Numero de Documento</label>
+                    </div>
 
-                <div class="form-floating  mb-3">
-                    <input th:field="*{empleadoFind.correo}" type="text" class="form-control"  id="fcorreo" placeholder="Correo Electronico">
-                    <label class="form-check-label" for="fcorreo">  Correo electronico</label>
-                </div>
-                <div class="form-floating  mb-3">
-                    <input th:field="*{empleadoFind.rol}"  type="text" class="form-control" id="frol" placeholder="Rol Empleado">
-                    <label for="frol">Rol Empleado</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input th:field="*{empleadoFind.empresas}"  type="number" class="form-control" id="fempleado.empresa" placeholder="ID Empresa">
-                    <label for="fempleado.empresa">Id Empresa</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Editar</button>
-                <a href="/empleado" class="btn btn-secundary">Cancelar</a>
+                    <div class="form-floating  mb-3">
+                        <input th:field="*{empleadoFind.correo}" type="text" class="form-control"  id="fcorreo" placeholder="Correo Electronico">
+                        <label class="form-check-label" for="fcorreo">  Correo electronico</label>
+                    </div>
+                    <div class="form-floating  mb-3">
+                        <input th:field="*{empleadoFind.rol}"  type="text" class="form-control" id="frol" placeholder="Rol Empleado">
+                        <label for="frol">Rol Empleado</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input th:field="*{empleadoFind.empresas}"  type="number" class="form-control" id="fempleado.empresa" placeholder="ID Empresa">
+                        <label for="fempleado.empresa">Id Empresa</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Editar</button>
+                    <a href="/empleado" class="btn btn-secundary">Cancelar</a>
 
-            </form>
+                </form>
             </div>
 
         </main>
