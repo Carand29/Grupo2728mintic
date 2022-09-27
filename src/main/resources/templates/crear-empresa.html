@@ -71,18 +71,33 @@
 
 
 
+      <form th:action="@{/empresa}" th:method="post" th:object="${empresa}">
+
+
+        <div class="form-floating  mb-3">
+          <input th:field="*{nit}"  type="number" class="form-control" id="fnit" placeholder="Nit Empresa">
+          <label for="fnit">Nit Empresa</label>
+        </div>
+        <div class="form-floating  mb-3">
+          <input th:field="*{nombreEmpresa}"  type="text" class="form-control" id="fnombreEmpresa" placeholder="Nombre de la Empresa">
+          <label for="fnombreEmpresa">Nombre de la Empresa</label>
+        </div>
+
+
+        <div class="form-floating  mb-3">
+          <input th:field="*{direccion}" type="text" class="form-control"  id="fdireccion" placeholder="Direccion Empresa">
+          <label class="form-check-label" for="fdireccion">Direccion Empresa </label>
+        </div>
+        <div class="form-floating  mb-3">
+          <input th:field="*{telefono}"  type="number" class="form-control" id="ftelefono" placeholder="Telefono Empresa">
+          <label for="ftelefono">Telefono Empresa</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear</button>
+        <a href="/empresa" class="btn btn-secundary">Cancelar</a>
 
 
 
-
-
-
-
-
-
-
-
-
+      </form>
 
     </main>
   </div>
