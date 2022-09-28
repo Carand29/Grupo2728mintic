@@ -7,14 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="UID" />
+        <module name="Grupo2728mintic" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Grupo2728mintic" target="18" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Grupo2728mintic" options="-parameters" />
       <module name="UID" options="-parameters" />
     </option>
   </component>

@@ -63,22 +63,76 @@
             </ul>
           </div>
         </nav>
+        <div >
 
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" sec:authorize="!isAuthenticated()">
+          <div class="card col-lg-5 mx-auto d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1>No tienes acceso al contenido,</h1>
+            <p>debes estar logeado.
+          <a class="btn btn-lg btn-secondary fw-bold" th:href="@{/oauth2/authorization/auth0}">Iniciar sesion</a>
+            </p>
+          </div>
+        </main>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" sec:authorize="isAuthenticated()">
+
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Inicio</h1>
+            <div class="row">
+              <div class="col-lg-12 mb-4 mb-sm-5">
+                <div class="card card-style1 border-0">
+                  <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+                    <div class="row align-items-center">
+                      <div class="col-lg-6 mb-4 mb-lg-0">
+                        <img th:src="${profile.get('picture')}" th:attr="alt=${profile.get('name')}"/>
+                      </div>
+                      <div class="col-lg-6 px-xl-10">
+                        <div class="d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
+                          <h3 class="h2  mb-0" >Bienvenido <span th:text="${profile.get('name')}"></span></h3>
+                        </div>
+                        <ul class="list-unstyled mb-1-9">
+                          <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Email:</span> <span th:text="${profile.get('email')}"></span></li>
+                          <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Website:</span> www.example.com</li>
+                        </ul>
+
+                        <ul class="social-icon-style1 list-unstyled mb-0 ps-0">
+                        <li><a href="#!"><i class="ti-twitter-alt"></i></a></li><li><a href="#!"><i class="ti-facebook"></i></a></li><li><a href="#!"><i class="ti-pinterest"></i></a></li>
+                        <li><a href="#!"><i class="ti-instagram"></i></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
 
 
+          <div class="container marketing">
+            <div class="row">
+              <div class="col-lg-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bd-placeholder-img "><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
 
+                <h2 class="fw-normal">Empresas</h2>
+                <p> Este espacio te permite consultar las empresas, crear, editar o eliminar.</p>
+                <p><a class="btn btn-secondary" href="/empresa">Ver empresas »</a></p>
+              </div><!-- /.col-lg-4 -->
+              <div class="col-lg-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bd-placeholder-img" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
 
+                <h2 class="fw-normal">Empleados</h2>
+                <p>Consulta los Empleados de las empresas crear, editar o elimin.</p>
+                <p><a class="btn btn-secondary" href="/empleado">Ver Empleados »</a></p>
+              </div><!-- /.col-lg-4 -->
+              <div class="col-lg-4">
+                <svg class="bd-placeholder-img" xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"  aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
 
-
-
-
-
-
+                <h2 class="fw-normal">Movimientos</h2>
+                <p>Consulta los Movimientos crear, editar o elimin.</p>
+                <p><a class="btn btn-secondary" href="/movimiento">Ver Movimientos  »</a></p>
+              </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+          </div>
 
 
 

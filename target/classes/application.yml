@@ -5,8 +5,8 @@ spring:
       client:
         registration:
           auth0:
-            client-id: kUfUDNx8AbFL3FDFwIInIfpwmld17w6X
-            client-secret: fwl-ycjH7xFWAET2eA38SJ85D7m44AtjaE4HLYiD-62QePJqxzT4_sDmVnGIv2ay
+            client-id: FgtpljbniOJXZCzyzxcL63V72kIZnbbD
+            client-secret: OB1UkV3Qg_0iS5iEuhQcRlou-QaSMqYIvrNYLpH7YMLphCYcvMsoy-XK6p3hRa35
             scope:
               - openid
               - profile
@@ -14,4 +14,4 @@ spring:
         provider:
           auth0:
             # trailing slash is important!
-            issuer-uri: https://dev-m5hfc8eu.us.auth0.com/
+            issuer-uri: https://dev-jsk4949b.us.auth0.com/

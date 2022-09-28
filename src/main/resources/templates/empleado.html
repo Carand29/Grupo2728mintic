@@ -64,7 +64,16 @@
       </div>
     </nav>
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" sec:authorize="!isAuthenticated()">
+      <div class="card col-lg-5 mx-auto d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1>No tienes acceso al contenido,</h1>
+        <p>debes estar logeado.
+          <a class="btn btn-lg btn-secondary fw-bold" th:href="@{/oauth2/authorization/auth0}">Iniciar sesion</a>
+        </p>
+      </div>
+    </main>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" sec:authorize="isAuthenticated()">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Empleados</h1>
       </div>

@@ -63,54 +63,52 @@
         </ul>
       </div>
     </nav>
-
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Crear Empresa</h1>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" sec:authorize="!isAuthenticated()">
+      <div class="card col-lg-5 mx-auto d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1>No tienes acceso al contenido,</h1>
+        <p>debes estar logeado.
+          <a class="btn btn-lg btn-secondary fw-bold" th:href="@{/oauth2/authorization/auth0}">Iniciar sesion</a>
+        </p>
       </div>
-
-
-      <form th:action="@{/empresa}" th:method="post" th:object="${empresa}">
-
-
-        <div class="form-floating  mb-3">
-          <input th:field="*{nit}"  type="number" class="form-control" id="fnit" placeholder="Nit Empresa">
-          <label for="fnit">Nit Empresa</label>
-        </div>
-        <div class="form-floating  mb-3">
-          <input th:field="*{nombreEmpresa}"  type="text" class="form-control" id="fnombreEmpresa" placeholder="Nombre de la Empresa">
-          <label for="fnombreEmpresa">Nombre de la Empresa</label>
-        </div>
-
-
-        <div class="form-floating  mb-3">
-          <input th:field="*{direccion}" type="text" class="form-control"  id="fdireccion" placeholder="Direccion Empresa">
-          <label class="form-check-label" for="fdireccion">Direccion Empresa </label>
-        </div>
-        <div class="form-floating  mb-3">
-          <input th:field="*{telefono}"  type="number" class="form-control" id="ftelefono" placeholder="Telefono Empresa">
-          <label for="ftelefono">Telefono Empresa</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Crear</button>
-        <a href="/empresa" class="btn btn-secundary">Cancelar</a>
-
-
-
-      </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
     </main>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" sec:authorize="isAuthenticated()">
+      
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Crear Empresa</h1>
+        </div>
+
+
+
+        <form th:action="@{/empresa}" th:method="post" th:object="${empresa}">
+
+
+          <div class="form-floating  mb-3">
+            <input th:field="*{nit}"  type="number" class="form-control" id="fnit" placeholder="Nit Empresa">
+            <label for="fnit">Nit Empresa</label>
+          </div>
+          <div class="form-floating  mb-3">
+            <input th:field="*{nombreEmpresa}"  type="text" class="form-control" id="fnombreEmpresa" placeholder="Nombre de la Empresa">
+            <label for="fnombreEmpresa">Nombre de la Empresa</label>
+          </div>
+
+
+          <div class="form-floating  mb-3">
+            <input th:field="*{direccion}" type="text" class="form-control"  id="fdireccion" placeholder="Direccion Empresa">
+            <label class="form-check-label" for="fdireccion">Direccion Empresa </label>
+          </div>
+          <div class="form-floating  mb-3">
+            <input th:field="*{telefono}"  type="number" class="form-control" id="ftelefono" placeholder="Telefono Empresa">
+            <label for="ftelefono">Telefono Empresa</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Crear</button>
+          <a href="/empresa" class="btn btn-secundary">Cancelar</a>
+
+
+
+        </form>
+
+      </main>
   </div>
 </div>
 
