@@ -37,7 +37,10 @@ public class FrontControladorEmpresa {
         return "crear-empresa";
     }
     @GetMapping("/empresa/{id}")
-    public String actualizarEmpresa(@PathVariable Long id, Model model){
+    public String actualizarEmpresa(@PathVariable Long id, Model model,@AuthenticationPrincipal OidcUser principal){
+        if (principal != null){
+            model.addAttribute("profile",principal.getClaims());
+        }
         Empresa empresaFind = this.servicesEmp.getVerEmpresa(id);
         model.addAttribute("empresaFind",empresaFind);
         return "editar-empresa";

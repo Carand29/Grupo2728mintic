@@ -22,7 +22,7 @@ public class Empleado {
     //Al crear el empleado este se relaciona con una Empresa, para eso se genera el MayToOne al id de la empresa
     /* @Column(name = "empresa")
     private String empresa;*/
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "EmpresaID", nullable = false)
     private Empresa empresas;
 
