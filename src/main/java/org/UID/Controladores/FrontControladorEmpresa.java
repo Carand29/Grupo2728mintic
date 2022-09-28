@@ -29,7 +29,10 @@ public class FrontControladorEmpresa {
     }
 
     @GetMapping("/empresa/nuevo")
-    public String createEmpresa(Model modelemp){
+    public String createEmpresa(Model modelemp,@AuthenticationPrincipal OidcUser principal){
+        if (principal != null){
+            modelemp.addAttribute("profile",principal.getClaims());
+        }
         modelemp.addAttribute("empresa",new Empresa());
         return "crear-empresa";
     }

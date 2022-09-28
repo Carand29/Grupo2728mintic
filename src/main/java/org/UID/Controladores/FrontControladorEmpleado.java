@@ -29,13 +29,19 @@ public class FrontControladorEmpleado {
         return "empleado";
     }
     @GetMapping("/empleado/nuevo")
-    public String createEmpleado(Model modelnp){
+    public String createEmpleado(Model modelnp, @AuthenticationPrincipal OidcUser principal){
+        if (principal != null) {
+            modelnp.addAttribute("profile", principal.getClaims());
+        }
         modelnp.addAttribute("empleado", new Empleado());
         return "crear-empleado";
     }
 
     @GetMapping("/empleado/{id}")
-    public String UpdateEmpelado(@PathVariable Long id, Model model){
+    public String UpdateEmpelado(@PathVariable Long id, Model model,@AuthenticationPrincipal OidcUser principal){
+        if (principal != null) {
+            model.addAttribute("profile", principal.getClaims());
+        }
         Empleado empleadoFind = this.servicesE.getVerEmpleado(id);
         model.addAttribute("empleadoFind", empleadoFind);
         return "editar-empleado";

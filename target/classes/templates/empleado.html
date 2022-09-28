@@ -89,7 +89,7 @@
             <th scope="col">documento Empleado</th>
             <th scope="col">Correo</th>
             <th scope="col">Rol Empleado</th>
-            <th scope="col">Empresa Id</th>
+            <th scope="col">Nombre de Empresa</th>
 
           </tr>
           </thead>
@@ -100,7 +100,7 @@
             <td th:text="${empleados.documentoEmpleado}"></td>
             <td th:text="${empleados.correo}"></td>
             <td th:text="${empleados.rol}"></td>
-            <td th:text="${empleados.empresas}"></td>
+            <td th:text="${empleados.empresas.nombreEmpresa}"></td>
             <td>   <a class="btn btn-primary" th:href="@{/empleado/{id}(id=${empleados.id})}" data-toggle="tooltip" data-placement="bottom" title="Editar">
               <span data-feather="edit" class="align-text-bottom"></span>
             </a>

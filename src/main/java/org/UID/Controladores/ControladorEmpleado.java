@@ -39,9 +39,11 @@ public class ControladorEmpleado {
     return  new RedirectView("/empleado");
     }
 
+
     @DeleteMapping("/empleado/{id}")
     public RedirectView eliminarEmpleado(@PathVariable(value = "id") Long id){
-        this.servicesE.eliminarE(id);
+        this.servicesE.eliminarEmpleado(id);
         return new RedirectView("/empleado");
     }
+
 }

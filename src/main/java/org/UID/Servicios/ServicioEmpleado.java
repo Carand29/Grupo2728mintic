@@ -1,6 +1,7 @@
 package org.UID.Servicios;
 
 import org.UID.Entidades.Empleado;
+import org.UID.Entidades.MovimientoDinero;
 import org.UID.Repositorio.RepositorioEmpleado;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +37,7 @@ public class ServicioEmpleado {
         return this.repositorioE.save(empleadoActual);
     }
     //metodo Borrar
-    public Empleado eliminarE(Long id){
+    public Empleado eliminarEmpleado(Long id){
         Empleado empleadoActual = repositorioE.findById(id).orElseThrow(); // Muestra lo que se borro
         this.repositorioE.deleteById(id);
         return empleadoActual;
