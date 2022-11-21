@@ -1,2 +1,2 @@
 # Grupo2728mintic
-proyecto de prueba
+proyecto full stack, basado en java srping boot, html y boostrap
